@@ -55,6 +55,7 @@ func main() {
 		administration.DELETE("/rooms/:id", roomHandler.Delete)
 	}
 
+	router.GET("/rooms", roomHandler.GetAll)
 	router.GET("/rooms/:id", roomHandler.GetById)
 	router.POST("/bookings", bookingHandler.Create)
 	router.GET("/bookings/:id", bookingHandler.GetByID)

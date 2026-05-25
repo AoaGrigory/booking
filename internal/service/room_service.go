@@ -40,6 +40,9 @@ func (s *RoomService) Create(input CreateRoomInput) (*models.Room, error) {
 func (s *RoomService) GetById(id uint) (*models.Room, error) {
 	return s.repo.GetByID(id)
 }
+func (s *RoomService) GetAll() ([]models.Room, error) {
+	return s.repo.GetAll()
+}
 
 func (s *RoomService) Delete(id uint) error {
 	return s.repo.Delete(id)

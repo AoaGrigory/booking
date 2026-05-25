@@ -48,6 +48,15 @@ func (h *RoomHandler) GetById(c *gin.Context) {
 
 }
 
+func (h *RoomHandler) GetAll(c *gin.Context) {
+	rooms, err := h.service.GetAll()
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "не удалось получить комнату"})
+		return
+	}
+	c.JSON(http.StatusOK, rooms)
+}
+
 func (h *RoomHandler) Delete(c *gin.Context) {
 	idStr := c.Param("id")
 	id64, err := strconv.ParseUint(idStr, 10, 32)

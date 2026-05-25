@@ -33,6 +33,12 @@ func (r *RoomRepo) GetByID(id uint) (*models.Room, error) {
 
 }
 
+func (r *RoomRepo) GetAll() ([]models.Room, error) {
+	var rooms []models.Room
+	result := r.db.Find(&rooms)
+	return rooms, result.Error
+}
+
 func (r *RoomRepo) Delete(id uint) error {
 	result := r.db.Delete(&models.Room{}, id)
 	return result.Error
