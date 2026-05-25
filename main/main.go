@@ -31,6 +31,14 @@ func main() {
 	//	}
 	//	db.Create(&admin)
 	//}
+
+	db.Create(&models.User{Username: "admin", Role: "admin"}) // id 1
+	db.Create(&models.User{Username: "user", Role: "user"})   // id 2
+
+	db.Create(&models.Room{Class: "Люкс", Price: 5000, Description: "Самая крутая комната"})               // id 1
+	db.Create(&models.Room{Class: "Комфорт", Price: 2000, Description: "Чуть хуже люкса и лучше эконома"}) // id 2
+	db.Create(&models.Room{Class: "Эконом", Price: 1000, Description: "База"})                             // id 3
+
 	roomRepo := repo.NewRoomRepo(db)
 	roomService := service.NewRoomService(roomRepo)
 	roomHandler := handler.NewRoomHandler(roomService)
