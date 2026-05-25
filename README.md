@@ -36,7 +36,7 @@ Headers X-User-Role: admin
 
 Забронировать комнату \
 POST /bookings \
-Headers X-User-ID: 1 
+Headers X-User-ID: 1 \
 тело запроса
 ```json
 {
