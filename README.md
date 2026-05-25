@@ -24,9 +24,9 @@ Headers X-User-Role: admin \
 тело запроса
 ```json
 {
-    "class": "Lux",
+    "class": "Люкс",
     "price": 5000,
-    "description": "Номер с видом на море"
+    "description": "Самая крутая комната"
 }
 ```
 
